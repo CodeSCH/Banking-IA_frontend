@@ -2,25 +2,26 @@
 
 .navbar {
   display: grid;
-  background-color: #8fbe3c;
+  background-color: #002d88;
   grid-template-columns: repeat(2, 50%);
   overflow: hidden;
   justify-items: center;
   align-items: center;
+  padding-block: 0.5rem;
 
   @include m.phone {
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-block: 0.5rem;
     padding-inline: 2rem;
   }
 }
 
 .navbar__logo {
+  margin-right: 4rem;
   & img {
-    width: 4rem;
+    width: 7rem;
   }
 }
 
@@ -37,11 +38,59 @@
   }
 }
 
+.navbar__link {
+  display: none;
+  color: rgb(233, 231, 231);
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #fff;
+  }
+
+  @include m.phone {
+    display: flex;
+  }
+}
+
+.navbar__profile {
+  display: none;
+
+  @include m.phone {
+    display: flex;
+
+    & img {
+      width: 3rem;
+      border-radius: 50%;
+    }
+  }
+}
+
+.navbar__button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin-left: 4rem;
+
+  & i {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  @include m.phone {
+    display: none;
+  }
+}
+
+// Phone
 .navbar__phone {
   height: 0.5rem;
   transition: all 0.5s ease;
 
-  & .navbar__bur {
+  & .navbar__link-phone {
     display: none;
   }
 
@@ -55,11 +104,15 @@
   display: flex;
   flex-direction: column;
   grid-column: 1 / 3;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 1.5rem;
-  height: 10rem;
+  height: 12rem;
 
-  & .navbar__bur {
+  & .navbar__link-phone {
+    display: block;
+  }
+
+  & .navbar__profile-phone {
     display: block;
   }
 
@@ -68,24 +121,15 @@
   }
 }
 
-.navbar__bur {
-  color: rgb(233, 231, 231);
-  font-weight: 400;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #fff;
-  }
-
-  @include m.phone {
-    display: flex;
-  }
-}
-
-.navbar__link {
+.navbar__profile-phone {
   display: none;
+  & img {
+    width: 3rem;
+    border-radius: 50%;
+  }
+}
+
+.navbar__link-phone {
   color: rgb(233, 231, 231);
   font-weight: 400;
   font-size: 1.2rem;
@@ -93,22 +137,6 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: #fff;
-  }
-
-  @include m.phone {
-    display: flex;
-  }
-}
-
-.navbar__button {
-  background-color: unset;
-  border: none;
-  cursor: pointer;
-  display: block;
-
-  & i {
-    font-size: 2rem;
     color: #fff;
   }
 
@@ -117,7 +145,8 @@
   }
 }
 
-.navbar__link-active {
+// Active
+.navbar__link--active {
   color: #fff;
   font-weight: 700;
 }

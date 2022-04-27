@@ -1,37 +1,44 @@
-@use "mixins" as m;
-@use "variables" as v;
+@use 'mixins' as m;
+@use 'variables' as v;
 
-* {
-  font-family: "Poppins", sans-serif;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
   margin: 0px;
-}
 
-html,
-body {
-  height: 100vh;
-  width: 100vw;
-  user-select: none;
-}
+  html {
+    box-sizing: border-box;
+  }
 
-main {
-  width: 100%;
-}
+  html,
+  body {
+    height: 100vh;
+    width: 100vw;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+  }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+  main {
+    width: 100%;
+  }
 
-ul {
-  list-style: none;
-}
+  img {
+    max-width: 100%;
+    display: block;
+  }
 
-a {
-  text-decoration: none;
-}
+  ul {
+    list-style: none;
+  }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  a {
+    text-decoration: none;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
