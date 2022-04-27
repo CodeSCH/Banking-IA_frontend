@@ -10,10 +10,10 @@ export const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <img src="../assets/components/react.png" alt="logo" />
+        <img src="../assets/components/logo.png" alt="logo" />
       </div>
       <div className="navbar__links">
-        <NavLink to="#" className="navbar__link navbar__link-active">
+        <NavLink to="#" className="navbar__link navbar__link--active">
           Inicio
         </NavLink>
         <NavLink to="#" className="navbar__link">
@@ -22,18 +22,24 @@ export const NavBar = () => {
         <NavLink to="#" className="navbar__link">
           Ajustes
         </NavLink>
+        <NavLink to="#" className="navbar__profile">
+          <img src="../assets/components/user.webp" alt="profile" />
+        </NavLink>
         <button className="navbar__button" onClick={handleBar}>
           <i className="fa-solid fa-bars"></i>
         </button>
       </div>
       <div className="navbar__phone">
-        <NavLink to="#" className="navbar__bur navbar__link-active">
+        <NavLink to="#" className="navbar__profile-phone">
+          <img src="../assets/components/user.webp" alt="profile" />
+        </NavLink>
+        <NavLink to="#" className="navbar__link-phone navbar__link--active">
           Inicio
         </NavLink>
-        <NavLink to="#" className="navbar__bur">
+        <NavLink to="#" className="navbar__link-phone">
           Operaciones
         </NavLink>
-        <NavLink to="#" className="navbar__bur">
+        <NavLink to="#" className="navbar__link-phone">
           Ajustes
         </NavLink>
       </div>
