@@ -6,16 +6,7 @@
 .LogForm {
   position: relative;
   min-height: 100vh;
-  background-image: radial-gradient(
-    circle at 114.09% 79.88%,
-    #7affea 0,
-    #6affe5 16.67%,
-    #5eeddc 33.33%,
-    #55d8d0 50%,
-    #50c3c2 66.67%,
-    #4db0b5 83.33%,
-    #4ca0a8 100%
-  );
+  background-image: url("../../../../public/assets/auth/ola-texturas.png");
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,9 +37,51 @@
   transition: 0.5s;
 }
 
+.bubble {
+  position: absolute;
+  display: flex;
+  top: 18%;
+  color: black;
+  background-color: aliceblue;
+  padding: 10px;
+  width: 30%;
+  height: 50px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  z-index: 20;
+}
+
+.bubble::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: aliceblue;
+  border-radius: 100px;
+  position: absolute;
+  top: 90px;
+  left: 25%;
+  z-index: 5;
+}
+  .bubble::after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-color: aliceblue;
+      border-radius: 100px;
+      position: absolute;
+      top: 60px;
+      left: 26%;
+      z-index: 1;
+}
+
 .imgBx img {
   height: 60%;
   object-fit: cover;
+  padding: 20px;
 }
 
 .containerLog .user {

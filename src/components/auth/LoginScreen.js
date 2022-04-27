@@ -7,6 +7,7 @@ export const LoginScreen = () => {
       <section className="containerLog">
         <div className="user singinBx">
           <div className="imgBx">
+            <div className="bubble">Haz Tu Deposito o Transferencia Ahora!</div>
             <img src="../assets/auth/bank.svg" />
           </div>
           <div className="formBx">
@@ -18,7 +19,7 @@ export const LoginScreen = () => {
               <br></br>
               <input type="submit" value="Login" />
               <p className="signup">
-              ¿Aún no tienes cuenta?<Link to="/auth/register">Registrarse</Link>
+                ¿Aún no tienes cuenta?<Link to="/auth/register">Registrarse</Link>
               </p>
             </form>
           </div>

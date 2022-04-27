@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import {Link} from "react-router-dom"
+import { Link } from 'react-router-dom';
 import '../../styles/components/auth/register.css';
 /*eslint-disable*/
 export const RegisterScreen = () => {
@@ -35,7 +35,8 @@ export const RegisterScreen = () => {
               </p>
             </form>
           </div>
-          <div className="imgBxr">
+          <div className="imgBxR">
+            <div className="bubbleR">Inicia Tu Cuenta Ahora y Disfruta de los Beneficios</div>
             <img src="../assets/auth/creditcard.svg" />
           </div>
         </div>
