@@ -1,44 +1,29 @@
+import '../../styles/components/auth/login.css';
+import { Link } from 'react-router-dom';
 export const LoginScreen = () => {
+  /*eslint-disable*/
   return (
-    <div>
-      <div className="login">
-        <div className="login__grid container">
-          <form className="form ">
-            <h3 className="form__heading">INICIAR SESIÓN</h3>
-            <hr />
-            <div className="form__group">
-              <label className="form__label" htmlFor="number">
-                N° Tarjeta:
-              </label>
-              <input className="form__input" type="text" id="number" />
-            </div>
-
-            <div className="form__group">
-              <label className="form__label" htmlFor="number">
-                Dni:
-              </label>
-              <input className="form__input" type="text" id="number" maxLength="8" />
-            </div>
-
-            <div className="form__group">
-              <label className="form__label" htmlFor="password">
-                Password:
-              </label>
-              <input className="form__input" type="password" id="password" />
-            </div>
-
-            <button className="form__button">Iniciar Sesión</button>
-          </form>
-          <div className="register__card">
-            <h2>IMTERVAMK</h2>
-            <img src="../assets/auth/card.png" alt="img" />
+    <div className="LogForm">
+      <section className="containerLog">
+        <div className="user singinBx">
+          <div className="imgBx">
+            <img src="../assets/auth/bank.svg" />
+          </div>
+          <div className="formBx">
+            <form>
+              <h2>Sing In</h2>
+              <input type="text" name="tarjeta" placeholder="N° Tarjeta" />
+              <input type="text" name="dni" placeholder="N° Dni" />
+              <input type="password" name="pass" placeholder="Contraseña" />
+              <br></br>
+              <input type="submit" value="Login" />
+              <p className="signup">
+              ¿Aún no tienes cuenta?<Link to="/auth/register">Registrarse</Link>
+              </p>
+            </form>
           </div>
         </div>
-        <div className="copyright">
-          <p>Copyright</p>
-          <p>IMTERVAMK</p>
-        </div>
-      </div>
+      </section>
     </div>
   );
 };
