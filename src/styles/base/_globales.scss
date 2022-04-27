@@ -1,10 +1,15 @@
 @use 'mixins' as m;
 @use 'variables' as v;
 
+<<<<<<< HEAD
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+=======
+* {
+  font-family: "Poppins", sans-serif;
+>>>>>>> 3314d8ed7332852be22dd8745b2f784fb1c61da2
   margin: 0px;
   box-sizing: border-box;
 }
