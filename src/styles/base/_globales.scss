@@ -6,39 +6,34 @@
 *:after {
   box-sizing: inherit;
   margin: 0px;
+}
 
-  html {
-    box-sizing: border-box;
-  }
+html {
+  box-sizing: border-box;
+}
 
-  html,
-  body {
-    height: 100vh;
-    width: 100vw;
-    user-select: none;
-    font-family: 'Poppins', sans-serif;
-  }
+body {
+  height: 100vh;
+  width: 100vw;
+  user-select: none;
+  font-family: $font_text;
+}
 
-  main {
-    width: 100%;
-  }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-  img {
-    max-width: 100%;
-    display: block;
-  }
+ul {
+  list-style: none;
+}
 
-  ul {
-    list-style: none;
-  }
+a {
+  text-decoration: none;
+}
 
-  a {
-    text-decoration: none;
-  }
-
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }

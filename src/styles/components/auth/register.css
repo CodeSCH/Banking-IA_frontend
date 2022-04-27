@@ -118,6 +118,7 @@
   border: none;
   outline: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.19);
+  padding-inline: 1rem;
 }
 
 .containerReg .user .formBx form input[type='submit'] {
@@ -126,8 +127,13 @@
   height: 40px;
   background: #8fbe3c;
   color: aliceblue;
+  cursor: pointer;
   font-weight: bold;
   letter-spacing: 1px;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   transition: 0.5s;
+}
+
+.containerReg .user .formBx form input[type='submit']:hover {
+  background: #6b9137;
 }

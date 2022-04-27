@@ -10,7 +10,7 @@ export const RegisterScreen = () => {
   };
 
   return (
-    <div className="RegForm">
+    <div className="RegForm animate__animated animate__fadeIn">
       <section className="containerReg">
         <div className="user singupBx">
           <div className="formBx">
@@ -29,9 +29,9 @@ export const RegisterScreen = () => {
               <input type="text" name="dni" placeholder="N° Dni" />
               <input type="password" name="pass" placeholder="Contraseña" />
               <br></br>
-              <input type="submit" value="Login" />
+              <input type="submit" value="Register" />
               <p className="signup">
-                ¿Aún no tienes cuenta?<Link to="/auth/login">Iniciar Sesión</Link>
+                ¿Tienes una cuenta? <Link to="/auth/login">Inicia Sesión</Link>
               </p>
             </form>
           </div>

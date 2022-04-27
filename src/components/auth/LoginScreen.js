@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const LoginScreen = () => {
   /*eslint-disable*/
   return (
-    <div className="LogForm">
+    <div className="LogForm animate__animated animate__fadeIn">
       <section className="containerLog">
         <div className="user singinBx">
           <div className="imgBx">
@@ -20,7 +20,7 @@ export const LoginScreen = () => {
               <br></br>
               <input type="submit" value="Login" />
               <p className="signup">
-                ¿Aún no tienes cuenta?<Link to="/auth/register">Registrarse</Link>
+                ¿Aún no tienes cuenta? <Link to="/auth/register">Registrate</Link>
               </p>
             </form>
           </div>
