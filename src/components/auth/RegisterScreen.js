@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useForm } from '../../hooks/useForm';
 import { isEmail } from 'validator';
+import { fetchNotToken } from '../../helpers/fetch';
 
 import '../../styles/components/auth/register.css';
 
 const initialState = {
+  img: '',
   card: '',
   fullname: '',
   email: '',
@@ -16,19 +18,24 @@ const initialState = {
 
 export const RegisterScreen = () => {
   const inputIMG = useRef();
-  const [valuesForm, handleInputChange, reset] = useForm(initialState);
-  const { card, fullname, email, dni, password } = valuesForm;
+  const [valuesForm, handleInputChange] = useForm(initialState);
+  const { img, card, fullname, email, dni, password } = valuesForm;
 
   const handleIMG = () => {
     inputIMG.current.click();
   };
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
+    if (isFormValid()) {
+      const resp = await fetchNotToken('auth/register', valuesForm, 'POST');
+      const body = await resp.json();
 
-    if (isFormValid() === true) {
-      Swal.fire('Success', 'Register success', 'success');
-      // Llamamos al fetch para registrar al usuario
+      if (body.ok) {
+        Swal.fire('Success', body.msg, 'success');
+      } else {
+        Swal.fire('Error', body.msg, 'error');
+      }
     }
   };
 
@@ -49,7 +56,6 @@ export const RegisterScreen = () => {
       Swal.fire('Error', 'La contraseña debe tener al menos 5 caracteres', 'error');
       return false;
     }
-
     return true;
   };
 
@@ -65,7 +71,14 @@ export const RegisterScreen = () => {
               </div>
 
               <div className="form__group form__hide">
-                <input className="form__input form__input" ref={inputIMG} type="file" />
+                <input
+                  className="form__input form__input"
+                  ref={inputIMG}
+                  type="file"
+                  name="img"
+                  value={img}
+                  onChange={handleInputChange}
+                />
               </div>
               <input type="text" name="card" placeholder="N° Tarjeta" value={card} onChange={handleInputChange} />
               <input
