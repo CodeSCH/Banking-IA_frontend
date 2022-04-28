@@ -27,6 +27,7 @@ export const RegisterScreen = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    console.log(valuesForm);
     if (isFormValid()) {
       const resp = await fetchNotToken('auth/register', valuesForm, 'POST');
       const body = await resp.json();
@@ -64,7 +65,7 @@ export const RegisterScreen = () => {
       <section className="containerReg">
         <div className="user singupBx">
           <div className="formBx">
-            <form onSubmit={handleRegister}>
+            <form onSubmit={handleRegister} encType="multipart/form-data">
               <h2>Sing Up</h2>
               <div className="form__img" onClick={handleIMG}>
                 <i className="fa-solid fa-camera"></i>
@@ -78,6 +79,7 @@ export const RegisterScreen = () => {
                   name="img"
                   value={img}
                   onChange={handleInputChange}
+                  accept="image/*"
                 />
               </div>
               <input type="text" name="card" placeholder="N° Tarjeta" value={card} onChange={handleInputChange} />

@@ -9,7 +9,7 @@ const fetchNotToken = (endpoint, data, method = 'GET') => {
     return fetch(url, {
       method,
       headers: {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
