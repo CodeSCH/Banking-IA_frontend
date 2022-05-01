@@ -7,6 +7,8 @@ import { fetchNotToken } from '../../helpers/fetch';
 
 import '../../styles/components/auth/register.css';
 
+/*eslint-disable*/
+
 const initialState = {
   img: '',
   card: '',
@@ -20,10 +22,6 @@ export const RegisterScreen = () => {
   const inputIMG = useRef();
   const [valuesForm, handleInputChange] = useForm(initialState);
   const { img, card, fullname, email, dni, password } = valuesForm;
-
-  const handleIMG = () => {
-    inputIMG.current.click();
-  };
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -60,30 +58,30 @@ export const RegisterScreen = () => {
     return true;
   };
 
+  const st = {
+    border: '5px solid black',
+    display: 'none',
+    padding: '6px 12px',
+    cursor: 'pointer',
+  };
+
   return (
     <div className="RegForm animate__animated animate__fadeIn">
       <section className="containerReg">
         <div className="user singupBx">
           <div className="formBx">
-            {/* usar axios (multipart/form-data
-                ),  y recibir no en json */}
+            <form encType="multipart/form-data">
+              <div className="form__img">
+                <label>
+                  <i className="fa-solid fa-camera"></i>
+                  <input type="file" style={st}></input>
+                </label>
+              </div>
+            </form>
+
             <form onSubmit={handleRegister} encType="multipart/form-data">
               <h2>Sing Up</h2>
-              <div className="form__img" onClick={handleIMG}>
-                <i className="fa-solid fa-camera"></i>
-              </div>
 
-              <div className="form__group form__hide">
-                <input
-                  className="form__input form__input"
-                  ref={inputIMG}
-                  type="file"
-                  name="img"
-                  value={img}
-                  onChange={handleInputChange}
-                  accept="image/*"
-                />
-              </div>
               <input type="text" name="card" placeholder="N° Tarjeta" value={card} onChange={handleInputChange} />
               <input
                 type="text"
