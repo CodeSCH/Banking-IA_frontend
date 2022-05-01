@@ -22,6 +22,7 @@ export const LoginScreen = () => {
       const body = await resp.json();
 
       if (body.ok) {
+        // Aqui redirigimos y guardamos el token en el localStorage
         Swal.fire('Success', body.msg, 'success');
       } else {
         Swal.fire('Error', body.msg, 'error');

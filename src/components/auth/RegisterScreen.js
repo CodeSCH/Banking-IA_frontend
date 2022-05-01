@@ -65,6 +65,8 @@ export const RegisterScreen = () => {
       <section className="containerReg">
         <div className="user singupBx">
           <div className="formBx">
+            {/* usar axios (multipart/form-data
+                ),  y recibir no en json */}
             <form onSubmit={handleRegister} encType="multipart/form-data">
               <h2>Sing Up</h2>
               <div className="form__img" onClick={handleIMG}>
