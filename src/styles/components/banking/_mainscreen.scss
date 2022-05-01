@@ -1,0 +1,12 @@
+.Wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100vw;
+    height: 90vh;
+    justify-content: center;
+}
+
+.Wrapper > div{
+    margin: 5px;
+}

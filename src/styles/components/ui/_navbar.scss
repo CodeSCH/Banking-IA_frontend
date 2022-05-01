@@ -2,7 +2,7 @@
 
 .navbar {
   display: grid;
-  background-color: #002d88;
+  background-color: #00a8af;
   grid-template-columns: repeat(2, 50%);
   overflow: hidden;
   justify-items: center;
@@ -44,9 +44,11 @@
   font-weight: 400;
   font-size: 1rem;
   text-transform: uppercase;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
+    font-size: 1.02rem;
+    border-bottom: 1px solid #fff;
     color: #fff;
   }
 
